@@ -20,9 +20,60 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
+       string A, B;
+        string Action;
         public MainWindow()
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            
+            ClassCalculator c = new ClassCalculator();
+            B = ( textBox.Text);
+            if((sender as Button).Content.ToString() == "+" || (sender as Button).Content.ToString() == "-" || (sender as Button).Content.ToString() == "*" || (sender as Button).Content.ToString() == "/")
+            {
+                Action = (sender as Button).Content.ToString();
+                A = (textBox.Text);
+                textBox.Text = "";
+                return;
+            }
+            else if((sender as Button).Content.ToString() == "=")
+            {
+                
+               switch (Action)
+                {
+                    case "+":
+                        {
+                            textBox.Text = c.Plus(A, B).ToString();
+                            break;
+                        }
+                    case "-":
+                        {
+                            textBox.Text = c.Minus(A, B).ToString();
+                            break;
+                        }
+                    case "*":
+                        {
+                            textBox.Text = c.Multiplication(A, B).ToString();
+                            break;
+                        }
+                    case "/":
+                        {
+                            textBox.Text = c.Division(A, B).ToString();
+                            break;
+                        }
+                }
+            }
+            else
+            {
+                textBox.Text += (sender as Button).Content.ToString();
+            }
+            
+        }
+
+
+
     }
 }

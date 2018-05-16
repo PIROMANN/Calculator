@@ -12,6 +12,7 @@
                 <Setter Property="FontSize" Value="20"></Setter>
                 <Setter Property="Background" Value="Azure"></Setter>
                 <Setter Property="Margin" Value="5"></Setter>
+				<EventSetter Event="Click" Handler="Button_Click"></EventSetter>
             </Style>
         </Grid.Resources>
         <Grid.ColumnDefinitions>
@@ -27,7 +28,7 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock FontSize="20" Grid.ColumnSpan="3" Margin="5" Background="AntiqueWhite"></TextBlock>
+        <TextBlock Name="textBox" FontSize="20" Grid.ColumnSpan="3" Margin="5" Background="AntiqueWhite"></TextBlock>
         <Button Grid.Row="1"  Content="1"></Button>
         <Button Grid.Row="1" Grid.Column="1"  Content="2"></Button>
         <Button Grid.Row="1" Grid.Column="2"  Content="3"></Button>
